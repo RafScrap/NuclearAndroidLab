@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">NuclearAndroidLab</string>
+    <string name="name_button_open_activity_a">Open ActivityA</string>
     <string name="name_button_open_activity_b">Open ActivityB</string>
     <string name="name_button_open_fragment_b">Open FragmentB</string>
+    <string name="name_button_open_activity_c">Open ActivityC</string>
+    <string name="title_activity_c">ActivityC</string>
 </resources>
