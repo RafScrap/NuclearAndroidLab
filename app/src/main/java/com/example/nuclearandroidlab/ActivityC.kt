@@ -14,11 +14,11 @@ class ActivityC : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_c)
-
+        Log.d("ActivityC", taskId.toString())
         val buttonOpenActivityA = findViewById<Button>(R.id.button_activity_c_open_activity_a)
         buttonOpenActivityA.setOnClickListener {
             val intent = Intent(this, ActivityA::class.java)
-                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent);
         }
     }

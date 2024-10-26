@@ -21,12 +21,12 @@ class ActivityB : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_b)
-
+        Log.d("ActivityB", taskId.toString())
         //enableEdgeToEdge()
         val buttonOpenActivityC = findViewById<Button>(R.id.button_activity_b_open_activity_c)
         buttonOpenActivityC.setOnClickListener {
             val intent = Intent(this, ActivityC::class.java)
-                //.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+                .addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
             startActivity(intent)
         }
     }
