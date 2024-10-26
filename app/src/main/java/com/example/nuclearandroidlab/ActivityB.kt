@@ -1,6 +1,10 @@
 package com.example.nuclearandroidlab
 
+import android.app.ActivityManager.RunningTaskInfo
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -13,35 +17,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.nuclearandroidlab.ui.theme.NuclearAndroidLabTheme
 
-class MainActivity : ComponentActivity() {
+class ActivityB : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            NuclearAndroidLabTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+        setContentView(R.layout.activity_b)
+        Log.d("ActivityB", taskId.toString())
+        //enableEdgeToEdge()
+        val buttonOpenActivityC = findViewById<Button>(R.id.button_activity_b_open_activity_c)
+        buttonOpenActivityC.setOnClickListener {
+            val intent = Intent(this, ActivityC::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+            startActivity(intent)
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    NuclearAndroidLabTheme {
-        Greeting("Android")
     }
 }
