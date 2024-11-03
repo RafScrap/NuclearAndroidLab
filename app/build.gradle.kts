@@ -51,6 +51,17 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.appcompat)
+    val work_version="2.9.1"
+
+    //implementation("androidx.appcompat:appcompat:1.3.1")
+    implementation("androidx.work:work-runtime:$work_version")
+    implementation("androidx.work:work-runtime-ktx:$work_version")
+    implementation("androidx.work:work-rxjava2:$work_version")
+    implementation("androidx.work:work-gcm:$work_version")
+    androidTestImplementation("androidx.work:work-testing:$work_version")
+    implementation("androidx.work:work-multiprocess:$work_version")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
