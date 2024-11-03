@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NuclearAndroidLab</string>
+    <string name="channel_id">channelId</string>
 </resources>
