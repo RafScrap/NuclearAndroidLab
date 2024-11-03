@@ -24,7 +24,7 @@ class EverydayWorker(context: Context, workerParams: WorkerParameters) :
     override fun doWork(): Result {
         Log.d("show", "show1")
         try {
-            notifactionShow("title","desc");
+            notifactionShow("ДЗ","Необходимо выполнить ДЗ");
         } catch (ex: Exception) {
             return Result.failure(); //или Result.retry()
         }
